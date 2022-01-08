@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C604AF6D2782DA1C001C6020 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604AF6C2782DA1C001C6020 /* Delegates.swift */; };
 		C6364E882780C00F00979AC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364E872780C00F00979AC4 /* AppDelegate.swift */; };
 		C6364E8A2780C00F00979AC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364E892780C00F00979AC4 /* SceneDelegate.swift */; };
-		C6364E8C2780C00F00979AC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364E8B2780C00F00979AC4 /* ViewController.swift */; };
 		C6364E8F2780C00F00979AC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6364E8D2780C00F00979AC4 /* Main.storyboard */; };
 		C6364E922780C00F00979AC4 /* Messenger_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6364E902780C00F00979AC4 /* Messenger_App.xcdatamodeld */; };
 		C6364E942780C01800979AC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6364E932780C01800979AC4 /* Assets.xcassets */; };
@@ -17,6 +17,34 @@
 		C6364EA22780C01900979AC4 /* Messenger_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364EA12780C01900979AC4 /* Messenger_AppTests.swift */; };
 		C6364EAC2780C01A00979AC4 /* Messenger_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364EAB2780C01900979AC4 /* Messenger_AppUITests.swift */; };
 		C6364EAE2780C01A00979AC4 /* Messenger_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364EAD2780C01A00979AC4 /* Messenger_AppUITestsLaunchTests.swift */; };
+		C6364EBB2780C18500979AC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6364EBA2780C18400979AC4 /* GoogleService-Info.plist */; };
+		C6364EBE2780C44300979AC4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C6364EBD2780C44300979AC4 /* FirebaseAuth */; };
+		C6364EC22780C44400979AC4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C6364EC12780C44400979AC4 /* FirebaseDatabase */; };
+		C6364EC62780C44400979AC4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C6364EC52780C44400979AC4 /* FirebaseFirestore */; };
+		C6364ECC2780C44400979AC4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C6364ECB2780C44400979AC4 /* FirebaseStorage */; };
+		C6364ED52780C94F00979AC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364ED42780C94E00979AC4 /* LoginViewController.swift */; };
+		C6364ED72780DF5600979AC4 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6364ED62780DF5500979AC4 /* SignupViewController.swift */; };
+		C6B99BD327859594005CB022 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C6B99BD227859594005CB022 /* IQKeyboardManagerSwift */; };
+		C6B99BDB27861103005CB022 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B99BDA278610FF005CB022 /* ConversationViewController.swift */; };
+		C6B99BDE278611C5005CB022 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6B99BDD278611C5005CB022 /* MessageKit */; };
+		C6B99BE12786129E005CB022 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B99BE02786129E005CB022 /* User.swift */; };
+		C6B99BE3278612DC005CB022 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B99BE2278612DB005CB022 /* Sender.swift */; };
+		C6B99BE52786130F005CB022 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B99BE42786130F005CB022 /* Message.swift */; };
+		C6CC5AD527837904003EBB7F /* ContactsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC5AD427837904003EBB7F /* ContactsTableView.swift */; };
+		C6CC5AD927837A76003EBB7F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC5AD827837A76003EBB7F /* ContactTableViewCell.swift */; };
+		C6D3068427816A0900383435 /* AuthenticationManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D3068327816A0700383435 /* AuthenticationManeger.swift */; };
+		C6D5B28F278460FE0092782E /* Spinners.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D5B28E278460FD0092782E /* Spinners.swift */; };
+		C6D5B29127848B090092782E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D5B29027848B080092782E /* Extensions.swift */; };
+		C6DDE7242786C85D002FA5BA /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DDE7232786C85D002FA5BA /* Chat.swift */; };
+		C6DDE7262786D1E2002FA5BA /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DDE7252786D1E1002FA5BA /* Enumerations.swift */; };
+		C6DDE72827870BBE002FA5BA /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DDE72727870BBD002FA5BA /* ChatTableViewCell.swift */; };
+		C6DDE72E27870C7C002FA5BA /* ChatsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DDE72D27870C7C002FA5BA /* ChatsTableView.swift */; };
+		C6DDE73027872212002FA5BA /* ConversationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DDE72F27872211002FA5BA /* ConversationHeaderView.swift */; };
+		C6DF00C82781DCD000C1F989 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF00C72781DCD000C1F989 /* ChatsViewController.swift */; };
+		C6DF00CA2781DCF000C1F989 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF00C92781DCF000C1F989 /* ContactsViewController.swift */; };
+		C6DF00CE2781E64200C1F989 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF00CD2781E64200C1F989 /* MainTabBarController.swift */; };
+		C6DF00D0278215A700C1F989 /* DatabaseManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF00CF278215A600C1F989 /* DatabaseManeger.swift */; };
+		C6DF00D22782260F00C1F989 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF00D12782260E00C1F989 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C604AF6C2782DA1C001C6020 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		C6364E842780C00F00979AC4 /* Messenger App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messenger App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6364E872780C00F00979AC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6364E892780C00F00979AC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C6364E8B2780C00F00979AC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C6364E8E2780C00F00979AC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6364E912780C00F00979AC4 /* Messenger_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Messenger_App.xcdatamodel; sourceTree = "<group>"; };
 		C6364E932780C01800979AC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +79,28 @@
 		C6364EA72780C01900979AC4 /* Messenger AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Messenger AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6364EAB2780C01900979AC4 /* Messenger_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messenger_AppUITests.swift; sourceTree = "<group>"; };
 		C6364EAD2780C01A00979AC4 /* Messenger_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messenger_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6364EBA2780C18400979AC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6364ED42780C94E00979AC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C6364ED62780DF5500979AC4 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C6B99BDA278610FF005CB022 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		C6B99BE02786129E005CB022 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C6B99BE2278612DB005CB022 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		C6B99BE42786130F005CB022 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C6CC5AD427837904003EBB7F /* ContactsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableView.swift; sourceTree = "<group>"; };
+		C6CC5AD827837A76003EBB7F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		C6D3068327816A0700383435 /* AuthenticationManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManeger.swift; sourceTree = "<group>"; };
+		C6D5B28E278460FD0092782E /* Spinners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinners.swift; sourceTree = "<group>"; };
+		C6D5B29027848B080092782E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C6DDE7232786C85D002FA5BA /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		C6DDE7252786D1E1002FA5BA /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		C6DDE72727870BBD002FA5BA /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		C6DDE72D27870C7C002FA5BA /* ChatsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableView.swift; sourceTree = "<group>"; };
+		C6DDE72F27872211002FA5BA /* ConversationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationHeaderView.swift; sourceTree = "<group>"; };
+		C6DF00C72781DCD000C1F989 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		C6DF00C92781DCF000C1F989 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		C6DF00CD2781E64200C1F989 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C6DF00CF278215A600C1F989 /* DatabaseManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManeger.swift; sourceTree = "<group>"; };
+		C6DF00D12782260E00C1F989 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +108,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B99BD327859594005CB022 /* IQKeyboardManagerSwift in Frameworks */,
+				C6364EC22780C44400979AC4 /* FirebaseDatabase in Frameworks */,
+				C6364EBE2780C44300979AC4 /* FirebaseAuth in Frameworks */,
+				C6B99BDE278611C5005CB022 /* MessageKit in Frameworks */,
+				C6364ECC2780C44400979AC4 /* FirebaseStorage in Frameworks */,
+				C6364EC62780C44400979AC4 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +157,17 @@
 		C6364E862780C00F00979AC4 /* Messenger App */ = {
 			isa = PBXGroup;
 			children = (
+				C6364ED32780C58C00979AC4 /* Models */,
+				C6364ED22780C55F00979AC4 /* Controllers */,
+				C6364ED12780C54200979AC4 /* Views */,
+				C6364EBA2780C18400979AC4 /* GoogleService-Info.plist */,
 				C6364E872780C00F00979AC4 /* AppDelegate.swift */,
 				C6364E892780C00F00979AC4 /* SceneDelegate.swift */,
-				C6364E8B2780C00F00979AC4 /* ViewController.swift */,
-				C6364E8D2780C00F00979AC4 /* Main.storyboard */,
 				C6364E932780C01800979AC4 /* Assets.xcassets */,
-				C6364E952780C01800979AC4 /* LaunchScreen.storyboard */,
 				C6364E982780C01800979AC4 /* Info.plist */,
 				C6364E902780C00F00979AC4 /* Messenger_App.xcdatamodeld */,
+				C604AF6C2782DA1C001C6020 /* Delegates.swift */,
+				C6DDE7252786D1E1002FA5BA /* Enumerations.swift */,
 			);
 			path = "Messenger App";
 			sourceTree = "<group>";
@@ -130,6 +189,73 @@
 			path = "Messenger AppUITests";
 			sourceTree = "<group>";
 		};
+		C6364ED12780C54200979AC4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6DDE72C27870C46002FA5BA /* TableViews */,
+				C6CC5AD727837A47003EBB7F /* TableViewCells */,
+				C6364E8D2780C00F00979AC4 /* Main.storyboard */,
+				C6364E952780C01800979AC4 /* LaunchScreen.storyboard */,
+				C6D5B28E278460FD0092782E /* Spinners.swift */,
+				C6D5B29027848B080092782E /* Extensions.swift */,
+				C6DDE72F27872211002FA5BA /* ConversationHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6364ED22780C55F00979AC4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6364ED42780C94E00979AC4 /* LoginViewController.swift */,
+				C6364ED62780DF5500979AC4 /* SignupViewController.swift */,
+				C6DF00C72781DCD000C1F989 /* ChatsViewController.swift */,
+				C6DF00C92781DCF000C1F989 /* ContactsViewController.swift */,
+				C6DF00CD2781E64200C1F989 /* MainTabBarController.swift */,
+				C6DF00D12782260E00C1F989 /* ProfileViewController.swift */,
+				C6B99BDA278610FF005CB022 /* ConversationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C6364ED32780C58C00979AC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C6B99BDF27861254005CB022 /* Data Types */,
+				C6D3068327816A0700383435 /* AuthenticationManeger.swift */,
+				C6DF00CF278215A600C1F989 /* DatabaseManeger.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C6B99BDF27861254005CB022 /* Data Types */ = {
+			isa = PBXGroup;
+			children = (
+				C6B99BE02786129E005CB022 /* User.swift */,
+				C6B99BE2278612DB005CB022 /* Sender.swift */,
+				C6B99BE42786130F005CB022 /* Message.swift */,
+				C6DDE7232786C85D002FA5BA /* Chat.swift */,
+			);
+			path = "Data Types";
+			sourceTree = "<group>";
+		};
+		C6CC5AD727837A47003EBB7F /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC5AD827837A76003EBB7F /* ContactTableViewCell.swift */,
+				C6DDE72727870BBD002FA5BA /* ChatTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C6DDE72C27870C46002FA5BA /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				C6CC5AD427837904003EBB7F /* ContactsTableView.swift */,
+				C6DDE72D27870C7C002FA5BA /* ChatsTableView.swift */,
+			);
+			path = TableViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +272,14 @@
 			dependencies = (
 			);
 			name = "Messenger App";
+			packageProductDependencies = (
+				C6364EBD2780C44300979AC4 /* FirebaseAuth */,
+				C6364EC12780C44400979AC4 /* FirebaseDatabase */,
+				C6364EC52780C44400979AC4 /* FirebaseFirestore */,
+				C6364ECB2780C44400979AC4 /* FirebaseStorage */,
+				C6B99BD227859594005CB022 /* IQKeyboardManagerSwift */,
+				C6B99BDD278611C5005CB022 /* MessageKit */,
+			);
 			productName = "Messenger App";
 			productReference = C6364E842780C00F00979AC4 /* Messenger App.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +352,11 @@
 				Base,
 			);
 			mainGroup = C6364E7B2780C00F00979AC4;
+			packageReferences = (
+				C6364EBC2780C43F00979AC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C6B99BD127859593005CB022 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				C6B99BDC278611C4005CB022 /* XCRemoteSwiftPackageReference "MessageKit" */,
+			);
 			productRefGroup = C6364E852780C00F00979AC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6364E972780C01800979AC4 /* LaunchScreen.storyboard in Resources */,
+				C6364EBB2780C18500979AC4 /* GoogleService-Info.plist in Resources */,
 				C6364E942780C01800979AC4 /* Assets.xcassets in Resources */,
 				C6364E8F2780C00F00979AC4 /* Main.storyboard in Resources */,
 			);
@@ -261,10 +401,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6364E8C2780C00F00979AC4 /* ViewController.swift in Sources */,
+				C6364ED52780C94F00979AC4 /* LoginViewController.swift in Sources */,
+				C6D3068427816A0900383435 /* AuthenticationManeger.swift in Sources */,
+				C6DF00CE2781E64200C1F989 /* MainTabBarController.swift in Sources */,
+				C6B99BE3278612DC005CB022 /* Sender.swift in Sources */,
+				C6CC5AD527837904003EBB7F /* ContactsTableView.swift in Sources */,
 				C6364E882780C00F00979AC4 /* AppDelegate.swift in Sources */,
+				C6CC5AD927837A76003EBB7F /* ContactTableViewCell.swift in Sources */,
+				C604AF6D2782DA1C001C6020 /* Delegates.swift in Sources */,
+				C6DDE72827870BBE002FA5BA /* ChatTableViewCell.swift in Sources */,
+				C6364ED72780DF5600979AC4 /* SignupViewController.swift in Sources */,
+				C6DF00C82781DCD000C1F989 /* ChatsViewController.swift in Sources */,
+				C6DF00D22782260F00C1F989 /* ProfileViewController.swift in Sources */,
+				C6B99BDB27861103005CB022 /* ConversationViewController.swift in Sources */,
+				C6DDE72E27870C7C002FA5BA /* ChatsTableView.swift in Sources */,
+				C6DF00CA2781DCF000C1F989 /* ContactsViewController.swift in Sources */,
+				C6DDE73027872212002FA5BA /* ConversationHeaderView.swift in Sources */,
+				C6D5B29127848B090092782E /* Extensions.swift in Sources */,
 				C6364E8A2780C00F00979AC4 /* SceneDelegate.swift in Sources */,
+				C6B99BE12786129E005CB022 /* User.swift in Sources */,
+				C6DDE7242786C85D002FA5BA /* Chat.swift in Sources */,
+				C6DF00D0278215A700C1F989 /* DatabaseManeger.swift in Sources */,
+				C6B99BE52786130F005CB022 /* Message.swift in Sources */,
+				C6D5B28F278460FE0092782E /* Spinners.swift in Sources */,
 				C6364E922780C00F00979AC4 /* Messenger_App.xcdatamodeld in Sources */,
+				C6DDE7262786D1E2002FA5BA /* Enumerations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +602,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W7A979P5S3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Messenger App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -450,6 +613,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +621,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "hsn.Messenger-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -468,8 +633,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W7A979P5S3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Messenger App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -477,6 +644,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,6 +652,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "hsn.Messenger-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,6 +771,66 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C6364EBC2780C43F00979AC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		C6B99BD127859593005CB022 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C6B99BDC278611C4005CB022 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6364EBD2780C44300979AC4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6364EBC2780C43F00979AC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C6364EC12780C44400979AC4 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6364EBC2780C43F00979AC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		C6364EC52780C44400979AC4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6364EBC2780C43F00979AC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		C6364ECB2780C44400979AC4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6364EBC2780C43F00979AC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		C6B99BD227859594005CB022 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6B99BD127859593005CB022 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		C6B99BDD278611C5005CB022 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6B99BDC278611C4005CB022 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C6364E902780C00F00979AC4 /* Messenger_App.xcdatamodeld */ = {
