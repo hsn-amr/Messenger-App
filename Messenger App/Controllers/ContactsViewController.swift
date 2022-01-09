@@ -53,8 +53,6 @@ class ContactsViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    @IBAction func searchButtonPressed(_ sender: UIButton) {
-    }
     
 }
 

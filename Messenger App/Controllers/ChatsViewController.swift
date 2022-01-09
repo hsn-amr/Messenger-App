@@ -91,9 +91,6 @@ class ChatsViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    @IBAction func searchButtonPressed(_ sender: UIButton) {
-        
-    }
 }
 
 extension ChatsViewController: UserDelegate{

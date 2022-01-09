@@ -237,7 +237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1ja-sF-d5h" customClass="ContactsTableView" customModule="Messenger_App" customModuleProvider="target">
-                                <rect key="frame" x="20" y="84.666666666666686" width="350" height="666.33333333333326"/>
+                                <rect key="frame" x="20" y="54" width="350" height="697"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="nrc-jD-fYy" customClass="ContactTableViewCell" customModule="Messenger_App" customModuleProvider="target">
@@ -282,29 +282,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYt-ng-H9B">
-                                <rect key="frame" x="60" y="32" width="45.5" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1uM-7s-U41">
-                                <rect key="frame" x="20" y="44" width="350" height="30.666666666666671"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" image="magnifyingglass" catalog="system" title=""/>
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="Zx6-A0-AnX" eventType="touchUpInside" id="H14-Ao-f5H"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jvt-VJ-iKB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1uM-7s-U41" firstAttribute="leading" secondItem="Jvt-VJ-iKB" secondAttribute="leading" constant="20" id="1pC-Dd-CSI"/>
-                            <constraint firstItem="1ja-sF-d5h" firstAttribute="top" secondItem="1uM-7s-U41" secondAttribute="bottom" constant="10" id="6WG-H3-ExL"/>
                             <constraint firstItem="1ja-sF-d5h" firstAttribute="leading" secondItem="Jvt-VJ-iKB" secondAttribute="leading" constant="20" id="Cgq-NY-An5"/>
                             <constraint firstItem="1ja-sF-d5h" firstAttribute="width" secondItem="vV9-PR-YuL" secondAttribute="width" multiplier="0.897436" id="Dca-5m-in6"/>
-                            <constraint firstItem="1uM-7s-U41" firstAttribute="top" secondItem="Jvt-VJ-iKB" secondAttribute="top" id="aSG-Rv-w7u"/>
+                            <constraint firstItem="1ja-sF-d5h" firstAttribute="top" secondItem="Jvt-VJ-iKB" secondAttribute="top" constant="10" id="Vxi-xx-59Q"/>
                             <constraint firstItem="1ja-sF-d5h" firstAttribute="height" relation="greaterThanOrEqual" secondItem="vV9-PR-YuL" secondAttribute="height" multiplier="0.728673" id="f5P-25-tUb"/>
-                            <constraint firstItem="Jvt-VJ-iKB" firstAttribute="trailing" secondItem="1uM-7s-U41" secondAttribute="trailing" constant="20" id="qXw-dU-Ofg"/>
                             <constraint firstItem="Jvt-VJ-iKB" firstAttribute="bottom" secondItem="1ja-sF-d5h" secondAttribute="bottom" constant="10" id="xFw-W6-2qt"/>
                         </constraints>
                     </view>
@@ -704,7 +689,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" width="128" height="128"/>
