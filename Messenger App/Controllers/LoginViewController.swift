@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         if AuthManeger.didHeVerify() {
-            errorLabel.text = "We sent to your email for verification.\nPlease verify your email then log in."
+            errorLabel.text = "Please verify your email then log in."
         }
     }
     

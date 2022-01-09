@@ -104,8 +104,7 @@ class ConversationViewController: MessagesViewController, MessagesDataSource, Me
     
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let date = formatDate(date: message.sentDate, format: "EEEE, dd/MM/yyyy")
-        let font = UIFont.preferredFont(forTextStyle: .body)
-        font.withSize(10)
+        let font = UIFont.systemFont(ofSize: 10, weight: .light)
         let attributes = [NSAttributedString.Key.font: font]
         return NSAttributedString(string: date, attributes: attributes)
     }
@@ -116,8 +115,7 @@ class ConversationViewController: MessagesViewController, MessagesDataSource, Me
     
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let time = formatDate(date: message.sentDate, format: "h:mm a")
-        let font = UIFont.preferredFont(forTextStyle: .body)
-        font.withSize(10)
+        let font = UIFont.systemFont(ofSize: 10, weight: .light)
         let attributes = [NSAttributedString.Key.font: font]
         return NSAttributedString(string: time, attributes: attributes)
     }

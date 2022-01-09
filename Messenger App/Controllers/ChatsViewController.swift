@@ -14,9 +14,10 @@ class ChatsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let spinner = Spinner()
+    let refreshControl = UIRefreshControl()
     
     let uid = AuthManeger.getUid()
-    var user: User?
+    var user = User()
     
     var chats = [Chat]()
     
@@ -30,6 +31,7 @@ class ChatsViewController: UIViewController {
         
         userImage.makeCircle()
         setActionToUserImage()
+        setActionToRefreshControl()
         
         getUserData()
         getAllChats()
@@ -66,6 +68,11 @@ class ChatsViewController: UIViewController {
         })
     }
     
+    func setActionToRefreshControl(){
+        refreshControl.addTarget(self, action: #selector(self.refreshPage(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
     func setActionToUserImage(){
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped(tapGestureRecognizer:)))
         userImage.isUserInteractionEnabled = true
@@ -78,6 +85,12 @@ class ChatsViewController: UIViewController {
         navigationController?.pushViewController(profileVC, animated: true)
     }
     
+    @objc func refreshPage(_ sender: AnyObject){
+        getUserData()
+        getAllChats()
+        refreshControl.endRefreshing()
+    }
+    
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         
     }
@@ -85,7 +98,7 @@ class ChatsViewController: UIViewController {
 
 extension ChatsViewController: UserDelegate{
     func getUserInfo() -> User {
-        return self.user!
+        return self.user
     }
     
     func getOtherUser(at index: Int) -> User {
@@ -104,6 +117,7 @@ extension ChatsViewController: UITableViewDataSource, UITableViewDelegate{
         let chat = chats[indexPath.row]
         cell.nameLabel.text = "\(chat.otherUser.firstName) \(chat.otherUser.lastName)"
         cell.chatTextLabel.text = chat.lastMessageText
+        cell.userImage.image = chat.otherUser.image
         
         return cell
     }

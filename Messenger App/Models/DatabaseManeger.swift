@@ -17,7 +17,7 @@ final class DatabaseManeger{
     
     static func createNewUser(user: User, uid: String, completion: @escaping (Result<User,Error>) -> Void){
         
-        let path = "\(uid)\(Timestamp(date: Date())).png"
+        let path = "\(uid).png"
             let fireStorageRef = Storage.storage().reference().child(path)
             if let uploadData = user.image?.jpegData(compressionQuality: 0.5){
                 fireStorageRef.putData(uploadData, metadata: nil) {
@@ -34,12 +34,12 @@ final class DatabaseManeger{
                 Users.lastName.rawValue: user.lastName,
                 Users.age.rawValue: user.age,
                 Users.gender.rawValue: user.gender,
-                Users.imageUrl.rawValue: path]){
+                Users.imagePath.rawValue: path]){
                     error in
                     if let error = error {
                         completion(.failure(error))
                     }else{
-                        createContact(user: user, uid: uid, path: path){
+                        updateContacts(user: user, uid: uid, imagePath: path){
                             result in
                             switch result{
                             case .success(let user):
@@ -70,37 +70,46 @@ final class DatabaseManeger{
             user.lastName = data[Users.lastName.rawValue] as? String ?? ""
             user.gender = data[Users.gender.rawValue] as? String ?? ""
             user.age = data[Users.age.rawValue] as? String ?? ""
-            let imageUrl = data[Users.imageUrl.rawValue] as? String ?? ""
-            if imageUrl != ""{
-                let storageRef = Storage.storage().reference().child(imageUrl)
-                storageRef.downloadURL { url, error in
-                    do {
-                        let data = try Data(contentsOf: url!)
-                        user.image = UIImage(data: data)
-                        user.imageUrl = imageUrl
-                        completion(.success(user))
-                    } catch {
-                        completion(.failure(error))
-                    }
+            user.imagePath = data[Users.imagePath.rawValue] as? String ?? ""
+            
+            downloadImage(user.getImageUrl()){
+                result in
+                switch result{
+                case .success(let image):
+                    user.image = image
+                    completion(.success(user))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
             }
-            
         }
         
     }
     
-    static func updateUserInfo(user: User, completion: @escaping (Result<User,Error>) -> Void){
-        let storageRef = Storage.storage()
-        storageRef.reference().child(user.imageUrl).delete{
-            error in
-            if let error = error{
+    static func downloadImage( _ imageUrl: String, completion: @escaping (Result<UIImage,Error>) -> Void){
+        Storage.storage().reference(forURL: imageUrl).downloadURL{
+            url, error in
+            if let error = error {
                 completion(.failure(error))
                 return
             }
+            
+            if let url = url {
+                do{
+                    let data = try Data(contentsOf: url)
+                    completion(.success(UIImage(data: data)!))
+                } catch {
+                    completion(.failure(error))
+                    return
+                }
+            }
         }
+    }
+    
+    static func updateUserInfo(user: User, completion: @escaping (Result<User,Error>) -> Void){
+        let storageRef = Storage.storage()
         
-        let path = "\(user.uid)\(Timestamp(date: Date())).png"
-        let fireStorageRef = storageRef.reference().child(path)
+        let fireStorageRef = storageRef.reference().child(user.imagePath)
         if let uploadData = user.image?.jpegData(compressionQuality: 0.5){
             fireStorageRef.putData(uploadData, metadata: nil) {
                 metadata, error in
@@ -117,12 +126,21 @@ final class DatabaseManeger{
                 Users.lastName.rawValue: user.lastName,
                 Users.age.rawValue: user.age,
                 Users.gender.rawValue: user.gender,
-                Users.imageUrl.rawValue: path]){
+                Users.imagePath.rawValue: user.imagePath]){
                     error in
                     if let error = error {
                         completion(.failure(error))
                     }else{
-                        createContact(user: user, uid: user.uid, path: path){
+                        updateContacts(user: user, uid: user.uid, imagePath: user.imagePath){
+                            result in
+                            switch result{
+                            case .success(let user):
+                                completion(.success(user))
+                            case .failure(let error):
+                                completion(.failure(error))
+                            }
+                        }
+                        updateUserInfoInChat(user: user, uid: user.uid, imagePath: user.imagePath){
                             result in
                             switch result{
                             case .success(let user):
@@ -135,12 +153,12 @@ final class DatabaseManeger{
                 }
     }
     
-    static func createContact(user: User, uid: String, path: String, completion: @escaping (Result<User,Error>) -> Void){
+    static func updateContacts(user: User, uid: String, imagePath: String, completion: @escaping (Result<User,Error>) -> Void){
         
         db.collection(Database.contatcs.rawValue).document(uid).setData([
             Users.firstName.rawValue: user.firstName,
             Users.lastName.rawValue: user.lastName,
-            Users.imageUrl.rawValue: path
+            Users.imagePath.rawValue: imagePath
         ]){
             error in
             if let error = error {
@@ -152,7 +170,7 @@ final class DatabaseManeger{
         
     }
     
-    static func updateUserInfoInChat(user: User, uid: String, path: String, completion: @escaping (Result<User,Error>) -> Void){
+    static func updateUserInfoInChat(user: User, uid: String, imagePath: String, completion: @escaping (Result<User,Error>) -> Void){
         db.collection(Database.chats.rawValue).getDocuments{
             documents, error in
             
@@ -166,9 +184,27 @@ final class DatabaseManeger{
                 return
             }
             
-            for chat in chats {
-                
+            for i in 0..<chats.count {
+                if chats[i].data().keys.first == uid{
+                    let id = chats[i].documentID
+                    let key = chats[i].data().keys.first
+                    let chat = chats[i].data().values.first as! NSDictionary
+                    db.collection(Database.chats.rawValue).document(id).setData([
+                        key! :
+                            [
+                                Chats.conversationId.rawValue: chat[Chats.conversationId.rawValue],
+                                Users.otherUserFirstName.rawValue: user.firstName,
+                                Users.otherUserLastName.rawValue: user.lastName,
+                                Users.otherUserImagePath.rawValue: user.imagePath,
+                                Chats.lastMessageText.rawValue: chat[Chats.lastMessageText.rawValue],
+                                Messages.sendDate.rawValue: chat[Messages.sendDate.rawValue],
+                                Messages.isRead.rawValue: chat[Messages.isRead.rawValue],
+                                Messages.type.rawValue: chat[Messages.type.rawValue]
+                            ]
+                    ])
+                }
             }
+            completion(.success(user))
         }
     }
     
@@ -181,16 +217,29 @@ final class DatabaseManeger{
             }
             var contacts = [User]()
             for contact in documents{
+                print("ccc", contact.documentID)
                 if contact.documentID != AuthManeger.getUid(){
                     var user = User()
                     user.uid = contact.documentID
                     user.firstName = contact.data()[ Users.firstName.rawValue] as! String
                     user.lastName = contact.data()[Users.lastName.rawValue] as! String
-                    user.imageUrl = contact.data()[Users.imageUrl.rawValue] as! String
+                    user.imagePath = contact.data()[Users.imagePath.rawValue] as! String
                     contacts.append(user)
                 }
             }
-            completion(.success(contacts))
+            
+            for i in 0..<contacts.count {
+                downloadImage(contacts[i].getImageUrl()){
+                    result in
+                    switch result{
+                    case .success(let image):
+                        contacts[i].image = image
+                        completion(.success(contacts))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+            }
         }
     }
     
@@ -230,13 +279,13 @@ final class DatabaseManeger{
                     Chats.conversationId.rawValue: chat.conversationId,
                     Users.otherUserFirstName.rawValue: chat.otherUser.firstName,
                     Users.otherUserLastName.rawValue: chat.otherUser.lastName,
-                    Users.otherUserImageUrl.rawValue: "\(chat.otherUserId).png",
+                    Users.otherUserImagePath.rawValue: chat.otherUser.imagePath,
                     Chats.lastMessageText.rawValue: chat.lastMessageText,
                     Messages.sendDate.rawValue: Timestamp(date: chat.sendDate as Date),
                     Messages.isRead.rawValue: chat.isRead,
                     Messages.type.rawValue: chat.type
                 ]
-        ]){
+        ], merge: true){
             error in
             if let addingError = error{
                 completion(.failure(addingError))
@@ -252,13 +301,13 @@ final class DatabaseManeger{
                     Chats.conversationId.rawValue: chat.conversationId,
                     Users.otherUserFirstName.rawValue: chat.currentUser.firstName,
                     Users.otherUserLastName.rawValue: chat.currentUser.lastName,
-                    Users.otherUserImageUrl.rawValue: "\(chat.currentUserId).png",
+                    Users.otherUserImagePath.rawValue: chat.currentUser.imagePath,
                     Chats.lastMessageText.rawValue: chat.lastMessageText,
                     Messages.sendDate.rawValue: Timestamp(date: chat.sendDate as Date),
                     Messages.isRead.rawValue: chat.isRead,
                     Messages.type.rawValue: chat.type
                 ]
-        ]){
+        ], merge: true){
             error in
             if let addingError = error{
                 completion(.failure(addingError))
@@ -293,8 +342,8 @@ final class DatabaseManeger{
                 let uid = chat.key
                 let firstName = chatInfo[Users.otherUserFirstName.rawValue] as! String
                 let lastName = chatInfo[Users.otherUserLastName.rawValue] as! String
-                let imageUrl = chatInfo[Users.otherUserImageUrl.rawValue] as! String
-                let otherUser = User(uid: uid, firstName: firstName, lastName: lastName,imageUrl: imageUrl)
+                let imagePath = chatInfo[Users.otherUserImagePath.rawValue] as! String
+                let otherUser = User(uid: uid, firstName: firstName, lastName: lastName,imagePath: imagePath)
                 
                 let lastMessageText = chatInfo[Chats.lastMessageText.rawValue] as! String
                 let sendDate = chatInfo[Messages.sendDate.rawValue] as! Timestamp
@@ -304,7 +353,18 @@ final class DatabaseManeger{
                 allChats.append(Chat(currentUserId: "", currentUser: User(), otherUserId: "", otherUser: otherUser, conversationId: conversationId, lastMessageText: lastMessageText, sendDate: sendDate.dateValue(), isRead: isRead, type: type))
             }
             
-            completion(.success(allChats))
+            for i in 0..<allChats.count {
+                downloadImage(allChats[i].otherUser.getImageUrl()){
+                    result in
+                    switch result{
+                    case .success(let image):
+                        allChats[i].otherUser.image = image
+                        completion(.success(allChats))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+            }
         }
         
     }

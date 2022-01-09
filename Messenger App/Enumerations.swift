@@ -18,12 +18,12 @@ enum Database: String {
 enum Users: String {
     case firstName = "firstName"
     case lastName = "lastName"
-    case imageUrl = "imageUrl"
+    case imagePath = "imagePath"
     case age = "age"
     case gender = "gender"
     case otherUserFirstName = "otherUserFirstName"
     case otherUserLastName = "otherUserLastName"
-    case otherUserImageUrl = "otherUserImageUrl"
+    case otherUserImagePath = "otherUserImagePath"
 }
 
 enum Chats: String {

@@ -15,7 +15,11 @@ struct User {
     var age: String = ""
     var gender: String = ""
     var image: UIImage?
-    var imageUrl: String = ""
+    var imagePath: String = ""
     var email: String = ""
     var password: String = ""
+    
+    func getImageUrl() -> String {
+        return "gs://messenger-d7cb7.appspot.com/\(self.imagePath)"
+    }
 }

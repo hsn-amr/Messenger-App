@@ -64,14 +64,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
            let lastName = lastNameTextField.text,
            let age = ageTextField.text,
            let gender = genderTextField.text,
-           let imageUrl = userDelegate?.getUserInfo().imageUrl{
+           let imagePath = userDelegate?.getUserInfo().imagePath,
+           let uid = userDelegate?.getUserInfo().uid{
             var user = User()
+            user.uid = uid
             user.image = userImage.image
             user.firstName = firstNmae
             user.lastName = lastName
             user.age = age
             user.gender = gender
-            user.imageUrl = imageUrl
+            user.imagePath = imagePath
             DatabaseManeger.updateUserInfo(user: user){
                 result in
                 self.spinner.stopSpinner(mainView: self.view)

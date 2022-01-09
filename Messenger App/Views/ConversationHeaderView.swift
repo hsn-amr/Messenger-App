@@ -29,8 +29,10 @@ class ConversationHeaderView {
         NSLayoutConstraint(item: stackViewHorizontally, attribute: .height, relatedBy: .equal, toItem: mainView, attribute: .height, multiplier: 0.1, constant: 0).isActive = true
         
         stackViewHorizontally.addSubview(backButton)
-        backButton.setTitle("back", for: .normal)
-        backButton.backgroundColor = .blue
+        let backIcon = UIImage(systemName: "arrow.backward")
+        backButton.setImage(backIcon, for: .normal)
+        backButton.clipsToBounds = true
+        backButton.contentMode = .scaleAspectFit
         backButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(item: backButton, attribute: .width, relatedBy: .equal, toItem: stackViewHorizontally, attribute: .width, multiplier: 0.1, constant: 0).isActive = true
         NSLayoutConstraint(item: backButton, attribute: .height, relatedBy: .equal, toItem: stackViewHorizontally, attribute: .height, multiplier: 1, constant: 0).isActive = true
@@ -46,7 +48,7 @@ class ConversationHeaderView {
         otherUserNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(item: otherUserNameLabel, attribute: .width, relatedBy: .equal, toItem: stackViewHorizontally, attribute: .width, multiplier: 0.6, constant: 0).isActive = true
         NSLayoutConstraint(item: otherUserNameLabel, attribute: .height, relatedBy: .equal, toItem: stackViewHorizontally, attribute: .height, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: otherUserNameLabel, attribute: .leading, relatedBy: .equal, toItem: otherUserImageView, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: otherUserNameLabel, attribute: .leading, relatedBy: .equal, toItem: otherUserImageView, attribute: .trailing, multiplier: 1, constant: 10).isActive = true
         
         mainView.addSubview(view)
         view.backgroundColor = .systemGray6

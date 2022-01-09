@@ -23,7 +23,7 @@ class ContactsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //setupRefreshControl()
+        setupRefreshControl()
         getAllContacts()
     }
     
@@ -32,11 +32,11 @@ class ContactsViewController: UIViewController {
         spinner.startSpinner(mainView: self.view)
         DatabaseManeger.getAllContacts{
             result in
-            self.spinner.stopSpinner(mainView: self.view)
             switch result{
             case .success(let users):
                 self.contacts = users
                 self.tableView.reloadData()
+                self.spinner.stopSpinner(mainView: self.view)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -44,7 +44,6 @@ class ContactsViewController: UIViewController {
     }
     
     func setupRefreshControl(){
-        refreshControl.attributedTitle = NSAttributedString(string: "pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshAction(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
