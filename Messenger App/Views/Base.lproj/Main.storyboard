@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wn0-Mz-SFo" customClass="ChatsTableView" customModule="Messenger_App" customModuleProvider="target">
-                                <rect key="frame" x="20" y="139" width="350" height="612"/>
+                                <rect key="frame" x="20" y="143.33333333333331" width="350" height="607.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" id="bTb-aB-qCA" customClass="ChatTableViewCell" customModule="Messenger_App" customModuleProvider="target">
@@ -173,6 +173,7 @@
                                                 <constraint firstItem="V0b-50-UOm" firstAttribute="top" secondItem="aLj-aZ-rwZ" secondAttribute="top" constant="10" id="wX7-rX-LNd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <connections>
                                             <outlet property="NameLabel" destination="gkX-oe-DSz" id="cYl-OH-yNV"/>
                                             <outlet property="chatTextLabel" destination="17F-FN-VOu" id="zB6-CO-WKq"/>
@@ -181,7 +182,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="laZ-rk-JvL">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="laZ-rk-JvL">
                                 <rect key="frame" x="10" y="48.999999999999993" width="370" height="84.333333333333314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-wU-ItY">
@@ -211,10 +212,11 @@
                             <constraint firstItem="uxI-PE-C5O" firstAttribute="bottom" secondItem="wn0-Mz-SFo" secondAttribute="bottom" constant="10" id="Gvh-vc-7qF"/>
                             <constraint firstItem="wn0-Mz-SFo" firstAttribute="width" secondItem="ki4-d6-MKF" secondAttribute="width" multiplier="0.897436" id="NeJ-Lu-eiB"/>
                             <constraint firstItem="laZ-rk-JvL" firstAttribute="height" secondItem="ki4-d6-MKF" secondAttribute="height" multiplier="0.1" id="Pww-Jv-AXZ"/>
+                            <constraint firstItem="wn0-Mz-SFo" firstAttribute="top" secondItem="laZ-rk-JvL" secondAttribute="bottom" constant="10" id="QHu-iS-e20"/>
                             <constraint firstItem="laZ-rk-JvL" firstAttribute="leading" secondItem="uxI-PE-C5O" secondAttribute="leading" constant="10" id="YKg-LK-X4Q"/>
                             <constraint firstItem="uxI-PE-C5O" firstAttribute="trailing" secondItem="laZ-rk-JvL" secondAttribute="trailing" constant="10" id="bKS-z7-iFJ"/>
                             <constraint firstItem="wn0-Mz-SFo" firstAttribute="leading" secondItem="uxI-PE-C5O" secondAttribute="leading" constant="20" id="dz4-21-XS2"/>
-                            <constraint firstItem="wn0-Mz-SFo" firstAttribute="height" secondItem="ki4-d6-MKF" secondAttribute="height" multiplier="0.725" id="woz-m5-Mik"/>
+                            <constraint firstItem="wn0-Mz-SFo" firstAttribute="height" relation="greaterThanOrEqual" secondItem="ki4-d6-MKF" secondAttribute="height" multiplier="0.7" id="woz-m5-Mik"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chats" image="message.fill" catalog="system" id="Zvr-8T-Hv8"/>
@@ -592,7 +594,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PG2-D1-lOM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-dk-ELM">
                                         <rect key="frame" x="0.0" y="489.33333333333326" width="350" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -642,7 +644,7 @@
                         <outlet property="firstNameTextField" destination="bx4-w9-Jfl" id="6PP-1B-J3n"/>
                         <outlet property="genderTextField" destination="1vF-xL-ybc" id="oWs-4s-ZjS"/>
                         <outlet property="lastNameTextField" destination="sMc-1e-pjT" id="vc5-0Y-heB"/>
-                        <outlet property="passwordTextField" destination="PG2-D1-lOM" id="Jtb-J5-HjL"/>
+                        <outlet property="passwordTextField" destination="vYn-dk-ELM" id="fux-jV-1IR"/>
                         <outlet property="userImage" destination="SWw-bo-2N2" id="kow-BX-nbL"/>
                     </connections>
                 </viewController>

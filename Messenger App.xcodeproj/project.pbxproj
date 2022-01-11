@@ -157,6 +157,7 @@
 		C6364E862780C00F00979AC4 /* Messenger App */ = {
 			isa = PBXGroup;
 			children = (
+				C65F7BBB278C08B60024EAFA /* Delegates */,
 				C6364ED32780C58C00979AC4 /* Models */,
 				C6364ED22780C55F00979AC4 /* Controllers */,
 				C6364ED12780C54200979AC4 /* Views */,
@@ -166,7 +167,6 @@
 				C6364E932780C01800979AC4 /* Assets.xcassets */,
 				C6364E982780C01800979AC4 /* Info.plist */,
 				C6364E902780C00F00979AC4 /* Messenger_App.xcdatamodeld */,
-				C604AF6C2782DA1C001C6020 /* Delegates.swift */,
 				C6DDE7252786D1E1002FA5BA /* Enumerations.swift */,
 			);
 			path = "Messenger App";
@@ -225,6 +225,14 @@
 				C6DF00CF278215A600C1F989 /* DatabaseManeger.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C65F7BBB278C08B60024EAFA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C604AF6C2782DA1C001C6020 /* Delegates.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		C6B99BDF27861254005CB022 /* Data Types */ = {
